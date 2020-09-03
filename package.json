@@ -1,0 +1,22 @@
+{
+  "name": "bootstrap-4",
+  "version": "1.0.0",
+  "description": "this is a test directory to learn git and node}",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanpablomg17/Curso-Bootstrap-4.git"
+  },
+  "author": "Juan Pablo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanpablomg17/Curso-Bootstrap-4/issues"
+  },
+  "homepage": "https://github.com/juanpablomg17/Curso-Bootstrap-4#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
