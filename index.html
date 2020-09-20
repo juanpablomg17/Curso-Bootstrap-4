@@ -32,14 +32,15 @@
       </div>
     </div>
   </nav>
+  
   <div id="loginModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header navbar-dark" style="color:white;">
           <h4 class="modal-title">Login </h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" style="background-color:#9575CD;">
           <form>
             <div class="form-row">
               <div class="form-group col-sm-4">
@@ -70,11 +71,11 @@
   <div id="reservationModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header navbar-dark" style="color:white;">
           <h5 class="modal-title">Reserve a Table</h5>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" style="background-color:#9575CD;">
           <form>
             <div class="form-group row">
               <label class="col-12 col-sm-2">Number of Guests</label>
@@ -106,10 +107,10 @@
               <div class="col-12 col-sm-4">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-success active">
-                    <input type="radio" name="section" value="non_smoking" id="non_smoking" autocomplete="off" checked>Non-Smoking
+                    <input type="radio" name="section" value="non_smoking" id="non_smoking" checked>Non-Smoking
                   </label>
                   <label class="btn btn-danger">
-                    <input type="radio" name="section" value="smoking" id="smoking" autocomplete="off">Smoking
+                    <input type="radio" name="section" value="smoking" id="smoking">Smoking
                   </label>
                 </div>
               </div>
@@ -134,6 +135,7 @@
       </div>
     </div>
   </div>
+
   <header class="jumbotron">
     <div class="container">
       <div class="row row-header">
@@ -293,19 +295,31 @@
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-  <script >
-                 $("#carouselButton").click(function(){
-                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
-                    $("#mycarousel").carousel('pause');
-                    $("#carouselButton").children("span").removeClass('fa-pause');
-                    $("#carouselButton").children("span").addClass('fa-play');
-                }
-                else if ($("#carouselButton").children("span").hasClass('fa-play')){
-                    $("#mycarousel").carousel('cycle');
-                    $("#carouselButton").children("span").removeClass('fa-play');
-                    $("#carouselButton").children("span").addClass('fa-pause');                    
-                }
-            });
+  <script>
+    $(document).ready(function() {
+      $("#mycarousel").carousel({
+        interval: 2000
+      });
+      $("#carouselButton").click(function() {
+        if ($("#carouselButton").children('span').hasClass('fa-pause')) {
+          $("#mycarousel").carousel('pause');
+          $("#carouselButton").children('span').removeClass('fa-pause');
+          $("#carouselButton").children('span').addClass('fa-play');
+        } else {
+          $("#mycarousel").carousel('cycle');
+          $("#carouselButton").children('span').removeClass('fa-play');
+          $("#carouselButton").children('span').addClass('fa-pause');
+        }
+      });
+      $('#loginButton').click(function() {
+        $('#loginModal').modal('show');
+      });
+      $('#reserveButton').click(function() {
+        $('#reservationModal').modal('show');
+      });
+
+    });
   </script>
+
 </body>
 </html>
